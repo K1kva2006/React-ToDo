@@ -23,7 +23,7 @@ function App() {
   const removeAll = () => {
     setLists([]);
   };
-  
+
   return (
     <>
       <h1 style={{ textAlign: "center" }}>ToDo React</h1>
@@ -34,6 +34,9 @@ function App() {
             type="text"
             value={value}
             onChange={changeInput}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") addList();
+            }}
           ></input>
           <button onClick={addList}>Add ToDo</button>
         </div>
